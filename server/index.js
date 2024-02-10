@@ -1,11 +1,19 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 const cors = require("cors");
+const mongoose = require("mongoose");
+
+mongoose.connect(
+  "mongodb+srv://lostproperty6:bOdPkds0XGveLHOA@cluster0.tp87vge.mongodb.net/employedatabase?retryWrites=true&w=majority"
+);
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+db.once("open", () => {
+  console.log("Connected to MongoDB Atlas");
+});
 
 const app = express();
 const router = require("./router/auth");
-
-require("./db/conn");
 
 app.use(
   cors({

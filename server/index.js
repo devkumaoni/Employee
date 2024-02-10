@@ -17,7 +17,7 @@ const router = require("./router/auth");
 
 app.use(
   cors({
-    origin: ["https://employee-client-ten.vercel.app"],
+    origin: ["https://employee-client-one.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   })

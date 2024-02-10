@@ -9,9 +9,9 @@ const router = require('./router/auth');
 dotenv.config({ path: './config.env' });
 
 const corsOption ={
-    origin: '',
-    method: ["GET", "POST"],
-    Credential: true,
+    origin: ['https://employee-client-inky.vercel.app/'],
+    methods: ["GET", "POST"],
+    credentials: true,
 }
 
 require('./db/conn');

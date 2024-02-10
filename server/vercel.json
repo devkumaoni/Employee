@@ -1,16 +1,21 @@
 {
-    "name": "employee-api",
-    "version": 2,
-    "builds": [
-      {
-        "src": "index.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)", 
-        "dest": "/"  
-      }
-    ] 
-   }
+  "name": "employee-api",
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "functions": {
+    "api": {
+      "maxDuration": 60
+    }
+  }
+}

@@ -3,7 +3,6 @@ const Dashboard = document.querySelector("#dashboard");
 fetch("https://employee-api-livid.vercel.app/fetch", { method: "get" })
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
     data.map(
       ({
         Proposed_Role,

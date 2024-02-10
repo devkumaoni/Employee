@@ -1,11 +1,10 @@
-const mongoose = require('mongoose');
- 
-const DB = process.env.DATABASE;
+const mongoose = require("mongoose");
 
-console.log(DB);
-
-mongoose.connect(DB, {
- 
-}).then(() => {
-    console.log('success');
-}).catch((err) => console.log('not success',err));
+mongoose
+  .connect(
+    "mongodb+srv://lostproperty6:bOdPkds0XGveLHOA@cluster0.tp87vge.mongodb.net/employedatabase?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("Databse Connected");
+  })
+  .catch((err) => console.log("Database Not Connected", err));

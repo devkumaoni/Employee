@@ -9,12 +9,11 @@ router.get("/", (req, res) => {
 router.post("/register", async (req, res) => {
   try {
     const user = new User({ ...req.body });
-    const userRegister = await user.save();
+    await user.save();
 
-    if (userRegister)
-      return res
-        .status(201)
-        .json({ message: "registered successfully", userRegister });
+    return res
+      .status(201)
+      .json({ message: "registered successfully", userRegister });
   } catch (err) {
     console.log(err);
     return res.status(500).json({ error: "Error", err });

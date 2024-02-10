@@ -1,31 +1,27 @@
-const dotenv = require("dotenv");
-const bodyParser = require('body-parser');
-const express = require('express');
-const cors= require('cors');
+const bodyParser = require("body-parser");
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
-const router = require('./router/auth'); 
+const router = require("./router/auth");
 
-dotenv.config({ path: './config.env' });
+require("./db/conn");
 
-const corsOption ={
-    origin: ['https://employee-client-inky.vercel.app/'],
+app.use(
+  cors({
+    origin: ["https://employee-client-inky.vercel.app/"],
     methods: ["GET", "POST"],
     credentials: true,
-}
-
-require('./db/conn');
-
-app.use(cors(corsOption));
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser())
+  })
+);
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 // Routes
 app.use(router);
 
 app.listen(PORT, () => {
-    console.log(`Sever running `);
+  console.log(`Sever running `);
 });

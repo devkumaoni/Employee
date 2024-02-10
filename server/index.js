@@ -9,7 +9,7 @@ require("./db/conn");
 
 app.use(
   cors({
-    origin: ["https://employee-client-lilac.vercel.app"],
+    origin: ["https://employee-client-rho.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true,
   })

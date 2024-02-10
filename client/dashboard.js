@@ -1,6 +1,6 @@
 const Dashboard = document.querySelector("#dashboard");
 
- fetch("http://localhost:8000/fetch", {method: 'get'}).then(res=> res.json()).then(data=>{
+ fetch("https://employee-api-vert.vercel.app/fetch", {method: 'get'}).then(res=> res.json()).then(data=>{
     console.log(data)
     data.map(({Proposed_Role, Name_of_Resource,	Location,Date_of_Joining,Employee_code,Email_iD_personal,Email_iD_Official,
       Contact_number,Emergency_contact_number,Business_Unit,Department,Reporting_Manager})=>{
